@@ -26,4 +26,6 @@
 
   const dataArchives = ref(data.value?.archives ?? undefined);
   const dataCategory = ref(data.value?.category ?? undefined);
+
+  useHead({ title: `${dataCategory.value?.name ?? "-"}に関する記事` });
 </script>

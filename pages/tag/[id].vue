@@ -24,4 +24,6 @@
 
   const dataArchives = ref(data.value?.archives ?? undefined);
   const dataTag = ref(data.value?.tag ?? undefined);
+
+  useHead({ title: `#${dataTag.value?.name ?? "-"}に関する記事` });
 </script>

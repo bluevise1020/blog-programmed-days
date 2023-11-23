@@ -13,4 +13,6 @@
   if (error.value) {
     throw createError(error.value?.data ?? "処理を続行できませんでした。");
   }
+
+  useHead({ title: "タグの一覧" });
 </script>
