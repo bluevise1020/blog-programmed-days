@@ -1,5 +1,7 @@
 import tailwindTypography from "@tailwindcss/typography";
 
+const isProduction = process.env.NODE_ENV === "production";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -10,12 +12,18 @@ export default defineNuxtConfig({
 
     public: {
       siteTitle: process.env.PUBLIC_SITE_TITLE,
+
+      gtm: {
+        enabled: isProduction,
+        id: String(process.env.PUBLIC_GTM_ID),
+      },
     },
   },
 
   css: ["~/assets/scss/main.scss"],
 
   modules: [
+    "@zadigetvoltaire/nuxt-gtm",
     "@nuxtjs/eslint-module",
     [
       "@nuxtjs/google-fonts",
